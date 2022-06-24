@@ -11,6 +11,12 @@
       href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
       rel="stylesheet"
     />
+    1 Add Your Kit's Code to a Project
+
+    <script
+      src="https://kit.fontawesome.com/cb7612831f.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Sign-up</title>
   </head>
   <body>
@@ -34,36 +40,59 @@
                   type="text"
                   name="first-name"
                   id="first-name"
+                  placeholder=" "
                   required
                 />
               </li>
               <li>
                 <label for="last-name">Last Name</label
-                ><input type="text" name="last-name" id="last-name" />
+                ><input
+                  type="text"
+                  name="last-name"
+                  id="last-name"
+                  placeholder=" "
+                />
               </li>
               <li>
                 <label for="email">Email</label
-                ><input type="email" name="email" id="email" required />
+                ><input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder=" "
+                  required
+                />
               </li>
               <li>
                 <label for="phone-num">Mobile Number</label
-                ><input type="text" name="phone-num" id="phone-num" />
+                ><input
+                  type="tel"
+                  name="phone-num"
+                  id="phone-num"
+                  placeholder=" "
+                  minlength="12"
+                  maxlength="15"
+                />
               </li>
-              <li>
+              <li class="pass-input">
                 <label for="password">Password</label
                 ><input
                   type="password"
                   name="password"
                   id="password"
+                  placeholder=" "
+                  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
                   required
                 />
               </li>
-              <li>
+              <li class="pass-input">
                 <label for="password-confirm">Confirm Password</label
                 ><input
                   type="password"
                   name="password-confirm"
                   id="password-confirm"
+                  placeholder=" "
+                  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
                   required
                 />
               </li>

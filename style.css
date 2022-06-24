@@ -77,7 +77,9 @@ a {
   --clr-txt-600: hsl(0, 0%, 0%);
   --clr-txt-400: hsl(0, 0%, 15%);
   --clr-txt-300: hsl(0, 0%, 25%);
-  --clr-accent: hsl(335, 30%, 56%);
+  --clr-accent: #b06d89;
+  --clr-accent-dark: hsl(335, 30%, 46%);
+  --clr-positive: hsl(122, 40%, 68%);
 
   --font-size-med: clamp(1rem, 2vw + 0.25rem, 1.5rem);
   --font-size-sml: clamp(0.75rem, 1.5vw + 0.25rem, 1.2rem);
@@ -136,6 +138,7 @@ h1 {
 }
 
 img {
+  /* TODO: handle sizing when zooming */
   height: clamp(2.5rem, 3vw + 1rem, 5rem);
 }
 
@@ -207,12 +210,79 @@ label {
   letter-spacing: 0.15em;
 }
 
+label[for='phone-num'],
+label[for='password'],
+label[for='password-confirm'] {
+  position: relative;
+}
+
+label[for='phone-num']::after {
+  content: '+66 111 222 333';
+  position: absolute;
+  margin-left: 0.5em;
+  font-size: var(--font-size-xsml);
+  letter-spacing: normal;
+  color: grey;
+}
+
+label[for='password']::after,
+label[for='password-confirm']::after {
+  position: absolute;
+  display: inline-block;
+  text-rendering: auto;
+  bottom: 0.15em;
+  margin-left: 0.5em;
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  content: '\f05a';
+}
+
+label[for='password']::before,
+label[for='password-confirm']::before {
+  position: absolute;
+  content: 'Must contain at least 6 characters including at least 1 uppercase character, 1 lowercase character, and 1 number.';
+  visibility: hidden;
+  bottom: 2.5em;
+  background-color: #555;
+  width: 100%;
+  padding: 1em 2em;
+  text-align: center;
+  border-radius: 0.5rem;
+  text-transform: none;
+  color: lightgrey;
+  line-height: normal;
+  letter-spacing: normal;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 500ms ease;
+}
+
+label[for='password']:hover::before,
+label[for='password-confirm']:hover::before,
+li:focus-within label::before {
+  visibility: visible;
+  opacity: 1;
+}
+
 input {
   border: 2px solid hsl(0 0% 90%);
   border-radius: 0.2rem;
   line-height: 1.75;
   padding-left: 0.5rem;
   font-size: var(--font-size-sml);
+}
+
+input:valid:not(:placeholder-shown) {
+  border-color: var(--clr-positive);
+}
+
+input:invalid:not(:placeholder-shown) {
+  border-color: hsl(0, 80%, 70%);
+}
+
+input:focus {
+  outline-offset: -2px;
+  box-shadow: 0px 5px 5px hsla(0 0% 30% / 0.15);
 }
 
 button {
@@ -229,11 +299,19 @@ button {
   box-shadow: 0px 5px 5px hsla(0 0% 30% / 0.15);
 }
 
+button:active {
+  background-color: var(--clr-accent-dark);
+}
+
 .login-option {
   padding: 1rem var(--block-padding);
   font-size: var(--font-size-sml);
   font-weight: 600;
   color: var(--clr-txt-400);
+}
+
+a:active {
+  color: var(--clr-accent-dark);
 }
 
 ::selection {
@@ -242,5 +320,5 @@ button {
 
 :focus {
   outline: pink solid 2px;
-  outline-offset: 1px;
+  outline-offset: 2px;
 }
