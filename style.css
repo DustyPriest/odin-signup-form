@@ -136,7 +136,7 @@ h1 {
 }
 
 img {
-  height: clamp(2.5rem, 5vw + 1rem, 5rem);
+  height: clamp(2.5rem, 3vw + 1rem, 5rem);
 }
 
 .img-credit {
@@ -212,6 +212,7 @@ input {
   border-radius: 0.2rem;
   line-height: 1.75;
   padding-left: 0.5rem;
+  font-size: var(--font-size-sml);
 }
 
 button {
