@@ -102,6 +102,7 @@ main {
 
 .banner {
   width: 45vw;
+  height: 100%;
 
   order: 1;
   display: flex;
@@ -115,6 +116,7 @@ main {
 
 /* ordered to prevent focusing on image credit first */
 .content {
+  width: 100%;
   order: 2;
 }
 
@@ -187,6 +189,7 @@ ul {
   margin-top: 1rem;
   display: flex;
   flex-wrap: wrap;
+  max-width: 1200px;
   gap: 2rem;
 }
 
@@ -217,7 +220,7 @@ label[for='password-confirm'] {
 }
 
 label[for='phone-num']::after {
-  content: '+66 111 222 333';
+  content: '';
   position: absolute;
   margin-left: 0.5em;
   font-size: var(--font-size-xsml);
