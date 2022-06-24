@@ -11,12 +11,11 @@
       href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
       rel="stylesheet"
     />
-    1 Add Your Kit's Code to a Project
-
     <script
       src="https://kit.fontawesome.com/cb7612831f.js"
       crossorigin="anonymous"
     ></script>
+    <script src="./script.js"></script>
     <title>Sign-up</title>
   </head>
   <body>
@@ -98,7 +97,9 @@
               </li>
             </ul>
           </div>
-          <button type="submit">Create Account</button>
+          <button type="submit" onclick="validatePasswords()">
+            Create Account
+          </button>
         </form>
         <div class="login-option">
           <span>Already have an account? </span><a href="#">Log in</a>

@@ -264,6 +264,18 @@ li:focus-within label::before {
   opacity: 1;
 }
 
+li.pass-input {
+  position: relative;
+}
+
+li.pass-input.pw-mismatch::after {
+  position: absolute;
+  bottom: -1.5em;
+  content: 'Passwords do not match.';
+  color: hsl(0, 80%, 50%);
+  font-size: var(--font-size-xsml);
+}
+
 input {
   border: 2px solid hsl(0 0% 90%);
   border-radius: 0.2rem;
